@@ -6,6 +6,9 @@ import time
 import datetime
 import logging
 
+__author__ = 'Paul Lamb <callmepauley@yahoo.com>'
+__version__ = '0.1'
+
 conn = sqlite3.connect('ctpl.db')
 c = conn.cursor()
 
