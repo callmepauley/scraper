@@ -43,7 +43,8 @@ def load_page(url, date):
     __ASYNCPOST = 'true'
     _clientstate = '|0|01{0}-0-0-0-0||[[[[]],[],[]],[{{}},[]],"01{0}-0-0-0-0"]'.format(date)  # - Y, M, D
     _location = 'rbDelivery'
-    _cycle = '[[[[null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"BEST%20AVAILABLE",null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,-1,null,null,null,null,null,null,null,null]],[],null],[{},[{}]],null]'
+    _cycle = '[[[[null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"EVENING",null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,-1,null,null,null,null,null,null,null,null]],[],null],[{},[{}]],null]'
+    # _cycle = '[[[[null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"BEST%20AVAILABLE",null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,-1,null,null,null,null,null,null,null,null]],[],null],[{},[{}]],null]'
     _x = random.randrange(1, 80)
     _y = random.randrange(1, 30)
 
@@ -103,7 +104,9 @@ def main():
         min_d = 0
         max_d = 1
 
-    locations = [43978, 46622]
+    locations = [46622]
+    # locations = [43978, 46622]
+
     output = []
 
     for d in range(min_d, max_d, 1):
@@ -117,7 +120,7 @@ def main():
             eta = int(((max_d - d) * delta) / 60)
 
             print("Retrieved {0} / {1} | {5} | Time elapsed: {2} s ({3} min) | ETA: {4} min".format(d + 1, max_d, int(time.perf_counter()), int(time.perf_counter() / 60), eta, date))
-
+            time.sleep(60)
         else:
             print('Error downloading file.')
 
