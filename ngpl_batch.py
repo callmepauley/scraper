@@ -43,7 +43,7 @@ def load_page(url, date):
     __ASYNCPOST = 'true'
     _clientstate = '|0|01{0}-0-0-0-0||[[[[]],[],[]],[{{}},[]],"01{0}-0-0-0-0"]'.format(date)  # - Y, M, D
     _location = 'rbDelivery'
-    _cycle = '[[[[null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"EVENING",null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,-1,null,null,null,null,null,null,null,null]],[],null],[{},[{}]],null]'
+    _cycle = '[[[[null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"BEST%20AVAILABLE",null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,-1,null,null,null,null,null,null,null,null]],[],null],[{},[{}]],null]'
     # _cycle = '[[[[null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"BEST%20AVAILABLE",null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,-1,null,null,null,null,null,null,null,null]],[],null],[{},[{}]],null]'
     _x = random.randrange(1, 80)
     _y = random.randrange(1, 30)

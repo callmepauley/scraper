@@ -32,7 +32,7 @@ class Locations(Base):  # Create 'locations' table (NOT IMPLEMENTED YET)
 class Scheduled(Base): # Create 'scheduled_qty' table
     __tablename__ = 'scheduled_qty'
 
-    id = Column(Integer, Sequence('schedule_id_seq'), primary_key=True)
+    id = Column(Integer, Sequence('scheduled_id_seq'), primary_key=True)
     tsp = Column(Integer())
     tsp_name = Column(String(50))
     loc = Column(String(50))
@@ -46,11 +46,32 @@ class Scheduled(Base): # Create 'scheduled_qty' table
     posting_dt = Column(String(50))
     timestamp = Column(String(50), default=now())
 
-
 class GasComp(Base): # Create 'gas_composition' table
     __tablename__ = 'gas_composition'
 
     id = Column(Integer, Sequence('gascomp_id_seq'), primary_key=True)
+    timestamp = Column(String(50), default=now())
+
+class Fleet(Base): # Create 'fleet' table
+    __tablename__ = 'fleet'
+
+    id = Column(Integer, Sequence('fleet_id_seq'), primary_key=True)
+    ship_name = Column(String(50))
+    imo = Column(String(50))
+    mmsi = Column(String(50))
+    year_built = Column(Integer())
+    flag = Column(String(50))
+    capacity = Column(Integer())
+    timestamp = Column(String(50), default=now())
+
+class WX(Base): # Create 'fleet' table
+    __tablename__ = 'wx'
+
+    id = Column(Integer, Sequence('wx_id_seq'), primary_key=True)
+    day = Column(String(50))
+    loc = Column(String(50))
+    avg_temp = Column(String(50))
+    source = Column(String(50))
     timestamp = Column(String(50), default=now())
 
 #--------------------------------------------------------------------------------------------------------------
@@ -67,3 +88,4 @@ if __name__ == '__main__':
         session.add(data)
     session.commit()
     print(datetime.datetime.now())
+    print(now())
